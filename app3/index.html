@@ -5,7 +5,22 @@
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body ng-app="parseApp">
+  <div ng-controller="parseController">
+  <form ng-submit="addBiz()">
+    <input type="text" ng-model="biz.name">
+    <select ng-model="biz.type" ng-options="type for type in types">
+      <option>Select Type</option>
+    </select>
+    <button ng-click="addBiz()">Submit</button>
+  </form>
+  <div>
+    <h1></h1>
+    <ul>
+      <li ng-repeat="biz in biznesses">{{biz.Name}}{{biz.Type}}</li>
+    </ul>
+  </div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src="app.js"></script>

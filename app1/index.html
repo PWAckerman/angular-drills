@@ -5,8 +5,13 @@
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
+<body ng-app="myApp">
+<div ng-controller='mainCtrl'>
+  <ul>
+    Talents
+    <li ng-repeat="talent in talents" ng-cloak>{{talent}}</li>
+  </ul>
+</div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src="app.js"></script>
   <script src="controller.js"></script>
